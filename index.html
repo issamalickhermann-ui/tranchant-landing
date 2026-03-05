@@ -761,12 +761,23 @@
   */
   function openCalendly(e) {
     if (e) e.preventDefault();
+    if (typeof fbq !== 'undefined') fbq('trackCustom', 'InitiateCalendly');
     if (typeof Calendly !== 'undefined') {
       Calendly.initPopupWidget({ url: 'https://calendly.com/issamalickhermann/30min' });
     } else {
       window.location.href = 'mailto:issamalickhermann@gmail.com?subject=Demande%20de%20rendez-vous%20—%20Tranchant';
     }
   }
+
+  // Meta Pixel — Réservation Calendly confirmée
+  window.addEventListener('message', function(ev) {
+    if (ev.data && typeof ev.data.event === 'string' && ev.data.event === 'calendly.event_scheduled') {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Schedule');
+        fbq('trackCustom', 'PriseDeRendezVous');
+      }
+    }
+  });
 
   // Form submit
   const form    = document.getElementById('diagForm');
@@ -780,7 +791,11 @@
       fBtn.textContent = 'Envoi en cours...';
       try {
         const r = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} });
-        if (r.ok) { fBody.classList.add('hidden'); fOk.style.display = 'block'; }
+        if (r.ok) {
+          if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'Diagnostic Stratégique' });
+          fBody.classList.add('hidden');
+          fOk.style.display = 'block';
+        }
         else throw new Error();
       } catch {
         fBtn.disabled = false;
