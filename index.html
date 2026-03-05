@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tranchant — Conseil Stratégique pour Dirigeants de PME</title>
+  <meta name="description" content="Analyse stratégique, pitch deck, playbook opérationnel — livrés en 48h. Diagnostic gratuit sous 24h. Pour les dirigeants de PME qui décident vite." />
+  <meta property="og:title" content="Tranchant — Conseil Stratégique · Livrables en 48h" />
+  <meta property="og:description" content="Diagnostic gratuit sous 24h. Rapport d'analyse, pitch deck ou playbook opérationnel livré en 48h." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; font-size: 16px; color: #1C2333; background: #fff; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --navy:  #0D1F3C;
+      --navy2: #162847;
+      --gold:  #C5A050;
+      --goldl: #D4B56A;
+      --g1:    #F7F8FA;
+      --g2:    #EAECF0;
+      --g3:    #6B7280;
+      --text:  #1C2333;
+      --r:     6px;
+      --sh:    0 2px 16px rgba(13,31,60,.08);
+      --shlg:  0 8px 40px rgba(13,31,60,.14);
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 88px 0; }
+    .s-grey     { background: var(--g1); }
+    .s-navy     { background: var(--navy); color: #fff; }
+
+    .tag  { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .hlg  { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.2vw, 40px); font-weight: 600; line-height: 1.2; }
+    .lead { font-size: 17px; color: var(--g3); line-height: 1.75; }
+    .sdiv { height: 1px; background: linear-gradient(90deg, transparent, rgba(197,160,80,.3), transparent); }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: var(--r); font-size: 15px; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all .2s; white-space: nowrap; }
+    .btn-gold    { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--goldl); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(197,160,80,.35); }
+    .btn-ghost   { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
+    .btn-lg { padding: 17px 34px; font-size: 16px; }
+    .btn-sm { padding: 10px 20px; font-size: 13px; }
+
+    /* NAVBAR */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(13,31,60,.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(197,160,80,.18); transition: box-shadow .3s; }
+    .nav__i { display: flex; align-items: center; justify-content: space-between; height: 66px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .logo { display: flex; align-items: center; gap: 11px; }
+    .logo__bar  { width: 3px; height: 26px; background: var(--gold); border-radius: 2px; }
+    .logo__name { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: 2.5px; }
+    .logo__sub  { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-top: -1px; }
+    .nav__links { display: flex; align-items: center; gap: 28px; }
+    .nav__link  { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.65); transition: color .2s; letter-spacing: .3px; }
+    .nav__link:hover { color: #fff; }
+    @media(max-width:640px){ .nav__links .nav__link { display: none; } }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 152px 0 88px; position: relative; overflow: hidden; }
+    .hero::after { content:''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 85% 40%, rgba(197,160,80,.06) 0%, transparent 70%); pointer-events: none; }
+    .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    @media(max-width:800px){ .hero__grid { grid-template-columns: 1fr; gap: 48px; } }
+    .hero__kicker { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .hero__title  { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.2vw, 52px); font-weight: 700; line-height: 1.13; color: #fff; margin-bottom: 10px; }
+    .hero__title em { font-style: normal; color: var(--gold); }
+    .hero__sub { font-size: 16px; color: rgba(255,255,255,.55); margin-bottom: 20px; line-height: 1.6; }
+    .hero__anchor { display: flex; align-items: flex-start; gap: 12px; background: rgba(197,160,80,.08); border-left: 3px solid var(--gold); border-radius: 0 var(--r) var(--r) 0; padding: 14px 18px; margin-bottom: 32px; }
+    .hero__anchor-t { font-size: 14px; color: rgba(255,255,255,.7); line-height: 1.55; }
+    .hero__anchor-t strong { color: #fff; }
+    .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero__card  { background: rgba(255,255,255,.05); border: 1px solid rgba(197,160,80,.22); border-radius: 10px; padding: 32px; }
+    .hero__clabel { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 18px; }
+    .hero__stat  { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+    .hero__sn    { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: #fff; }
+    .hero__sl    { font-size: 13px; color: rgba(255,255,255,.5); }
+    .hero__sep   { height: 1px; background: rgba(255,255,255,.08); margin: 18px 0; }
+    .hero__item  { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .hero__dot   { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
+    .hero__it    { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.5; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+    .scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 48px; opacity: .35; animation: bounce 2.2s ease-in-out infinite; }
+    .scroll-hint span { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+
+    /* POUR QUI */
+    .pq__hdr  { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+    .pq__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    @media(max-width:640px){ .pq__grid { grid-template-columns: 1fr; } }
+    .pqcard { border: 1px solid var(--g2); border-radius: 10px; padding: 26px 24px; background: #fff; box-shadow: var(--sh); display: flex; gap: 16px; align-items: flex-start; transition: box-shadow .2s, transform .2s; }
+    .pqcard:hover { box-shadow: var(--shlg); transform: translateY(-2px); }
+    .pqcard__icon  { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+    .pqcard__title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; line-height: 1.35; }
+    .pqcard__desc  { font-size: 13px; color: var(--g3); line-height: 1.6; }
+
+    /* SERVICES */
+    .srv__hdr  { text-align: center; max-width: 640px; margin: 0 auto 52px; }
+    .srv__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    @media(max-width:860px){ .srv__grid { grid-template-columns: 1fr; } }
+    .srvc { border: 1px solid var(--g2); border-radius: 10px; padding: 30px 26px; background: #fff; box-shadow: var(--sh); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+    .srvc:hover { transform: translateY(-4px); box-shadow: var(--shlg); }
+    .srvc--acc { border-color: rgba(197,160,80,.4); box-shadow: 0 4px 24px rgba(197,160,80,.1); }
+    .srvc__icon   { width: 42px; height: 42px; border-radius: 8px; background: rgba(197,160,80,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 19px; }
+    .srvc__title  { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+    .srvc__desc   { font-size: 13px; color: var(--g3); line-height: 1.65; flex: 1; margin-bottom: 14px; }
+    .srvc__anchor { font-size: 12px; font-style: italic; color: var(--g3); border-left: 2px solid var(--gold); padding-left: 10px; margin-bottom: 18px; line-height: 1.5; }
+    .srvc__foot   { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--g2); padding-top: 16px; }
+    .srvc__price  { font-size: 17px; font-weight: 700; color: var(--navy); }
+    .srvc__delay  { font-size: 11px; color: var(--g3); font-weight: 500; }
+
+    /* PROCESS */
+    .prc__hdr   { text-align: center; max-width: 580px; margin: 0 auto 52px; }
+    .prc__steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+    @media(max-width:860px){ .prc__steps { grid-template-columns: repeat(2,1fr); gap: 20px; } }
+    @media(max-width:480px){ .prc__steps { grid-template-columns: 1fr; } }
+    .pstep { text-align: center; padding: 20px 14px; position: relative; }
+    .pstep__num   { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--gold); }
+    .pstep__title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .pstep__desc  { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.55; }
+    .pstep__arrow { position: absolute; right: -5px; top: 36px; color: var(--gold); font-size: 18px; opacity: .4; }
+    @media(max-width:860px){ .pstep__arrow { display: none; } }
+    .prc__note { font-size: 13px; color: rgba(255,255,255,.4); text-align: center; margin-top: 36px; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.7; border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; }
+    .prc__note strong { color: rgba(255,255,255,.75); }
+
+    /* FAQ */
+    .faq__hdr  { text-align: center; max-width: 560px; margin: 0 auto 44px; }
+    .faq__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; max-width: 960px; margin: 0 auto; }
+    @media(max-width:640px){ .faq__grid { grid-template-columns: 1fr; } }
+    .faqitem { background: #fff; border: 1px solid var(--g2); border-radius: 10px; padding: 22px 24px; box-shadow: var(--sh); }
+    .faqitem__q { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 9px; display: flex; gap: 10px; align-items: flex-start; }
+    .faqitem__q::before { content:'?'; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; min-width: 20px; border-radius: 50%; background: rgba(197,160,80,.15); color: var(--gold); font-size: 12px; font-weight: 700; margin-top: 1px; }
+    .faqitem__a { font-size: 13px; color: var(--g3); line-height: 1.65; padding-left: 30px; }
+
+    /* FORM */
+    .diag__wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    @media(max-width:800px){ .diag__wrap { grid-template-columns: 1fr; } }
+    .diag__left .hlg { color: var(--navy); margin-bottom: 12px; }
+    .dprom { display: flex; align-items: flex-start; gap: 12px; margin-top: 18px; }
+    .dprom__icon { font-size: 18px; flex-shrink: 0; }
+    .dprom__t { font-size: 13px; color: var(--g3); line-height: 1.55; }
+    .dprom__t strong { color: var(--navy); }
+    .proof-strip { display: flex; align-items: center; gap: 10px; background: rgba(13,31,60,.04); border: 1px solid var(--g2); border-radius: var(--r); padding: 12px 14px; margin-top: 26px; }
+    .proof-strip__t { font-size: 12px; color: var(--g3); line-height: 1.45; }
+    .proof-strip__t strong { color: var(--navy); }
+
+    .fcard { background: #fff; border-radius: 12px; box-shadow: var(--shlg); border: 1px solid var(--g2); overflow: hidden; }
+    .fcard__head { background: var(--navy); padding: 20px 28px; }
+    .fcard__ttl  { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: #fff; }
+    .fcard__sub  { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 3px; }
+    .fcard__body { padding: 26px 28px; }
+
+    .fg { margin-bottom: 15px; }
+    .fl { display: block; font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 6px; letter-spacing: .3px; }
+    .fl span { color: var(--gold); }
+    .fc { width: 100%; padding: 11px 13px; border: 1.5px solid var(--g2); border-radius: var(--r); font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text); background: #fff; transition: border-color .2s; -webkit-appearance: none; }
+    .fc:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(197,160,80,.11); }
+    .fc::placeholder { color: #b8c0cc; }
+    textarea.fc { resize: vertical; min-height: 96px; }
+    select.fc { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230D1F3C' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    @media(max-width:480px){ .frow { grid-template-columns: 1fr; } }
+    .fsubmit { width: 100%; padding: 15px; background: var(--gold); color: var(--navy); border: none; border-radius: var(--r); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all .2s; margin-top: 4px; }
+    .fsubmit:hover { background: var(--goldl); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(197,160,80,.35); }
+    .fsubmit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .fnote { font-size: 11px; color: var(--g3); text-align: center; margin-top: 10px; }
+    .fsuccess { display: none; text-align: center; padding: 36px 20px; }
+    .fsuccess__icon  { font-size: 44px; margin-bottom: 12px; }
+    .fsuccess__title { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--navy); margin-bottom: 8px; }
+    .fsuccess__desc  { font-size: 13px; color: var(--g3); }
+    .finner.hidden { display: none; }
+
+    /* RDV */
+    .rdv { background: var(--navy); border-top: 3px solid var(--gold); padding: 52px 0; }
+    .rdv__i { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .rdv__title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .rdv__desc  { font-size: 14px; color: rgba(255,255,255,.55); }
+
+    /* FOOTER */
+    .footer { background: #07101f; padding: 44px 0 28px; }
+    .footer__i { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer__name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; letter-spacing: 2.5px; }
+    .footer__fsub { font-size: 9px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-top: 2px; }
+    .footer__mail { font-size: 13px; color: rgba(255,255,255,.4); }
+    .footer__mail a { color: var(--gold); }
+    .footer__copy { font-size: 11px; color: rgba(255,255,255,.2); text-align: center; margin-top: 26px; }
+
+    /* TÉMOIGNAGES */
+    .tmh { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+    .tm__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    @media(max-width:860px){ .tm__grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:540px){ .tm__grid { grid-template-columns: 1fr; } }
+    .tmcard { background: #fff; border: 1px solid var(--g2); border-radius: 10px; padding: 24px; box-shadow: var(--sh); display: flex; flex-direction: column; gap: 14px; transition: transform .2s, box-shadow .2s; }
+    .tmcard:hover { transform: translateY(-3px); box-shadow: var(--shlg); }
+    .tmcard--acc { border-color: rgba(197,160,80,.4); box-shadow: 0 4px 24px rgba(197,160,80,.1); }
+    .tmcard__stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; }
+    .tmcard__quote { font-size: 14px; color: var(--text); line-height: 1.75; font-style: italic; flex: 1; }
+    .tmcard__foot { border-top: 1px solid var(--g2); padding-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .tmcard__name { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .tmcard__role { font-size: 11px; color: var(--g3); margin-top: 2px; }
+    .tmcard__svc  { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); background: rgba(197,160,80,.1); border-radius: 3px; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; }
+
+    /* STICKY MOBILE */
+    .sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 190; background: var(--navy); border-top: 2px solid var(--gold); padding: 11px 18px; gap: 10px; align-items: center; transition: opacity .3s; }
+    .sticky a, .sticky button { flex: 1; text-align: center; }
+    @media(max-width:640px){ .sticky { display: flex; } body { padding-bottom: 66px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav" id="navbar">
+  <div class="nav__i">
+    <a href="#" class="logo">
+      <div class="logo__bar"></div>
+      <div>
+        <div class="logo__name">TRANCHANT</div>
+        <div class="logo__sub">Conseil Stratégique</div>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="#pour-qui"   class="nav__link">Pour qui</a>
+      <a href="#services"       class="nav__link">Services</a>
+      <a href="#temoignages"    class="nav__link">Témoignages</a>
+      <a href="#faq"            class="nav__link">FAQ</a>
+      <a href="#diagnostic" class="nav__link">Diagnostic gratuit</a>
+      <button class="btn btn-gold btn-sm" onclick="openCalendly(event)">Prendre RDV</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <div class="hero__kicker">Conseil Stratégique · PME &amp; ETI</div>
+        <h1 class="hero__title">
+          Un cabinet prend 6 semaines.<br>
+          <em>Nous livrons en 48h.</em>
+        </h1>
+        <p class="hero__sub">
+          Analyse de marché, pitch deck, processus opérationnels — des livrables directement actionnables, sans les délais et les coûts d'un cabinet traditionnel.
+        </p>
+        <div class="hero__anchor">
+          <div class="hero__anchor-t">
+            <strong>Une mauvaise décision stratégique coûte entre 40 000 et 120 000 € à une PME.</strong>
+            Notre rapport d'analyse à 2 500 € s'amortit dès la première décision évitée.
+          </div>
+        </div>
+        <div class="hero__ctas">
+          <a href="#diagnostic" class="btn btn-gold btn-lg">Obtenir mon diagnostic gratuit</a>
+          <button class="btn btn-ghost btn-lg" onclick="openCalendly(event)">Prendre rendez-vous</button>
+        </div>
+        <div class="scroll-hint">
+          <span>Découvrir</span>
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M1 1l6 6 6-6" stroke="#C5A050" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="hero__clabel">Ce que vous recevez</div>
+        <div class="hero__stat"><span class="hero__sn">48h</span><span class="hero__sl">délai de livraison garanti</span></div>
+        <div class="hero__stat"><span class="hero__sn">24h</span><span class="hero__sl">pour votre diagnostic gratuit</span></div>
+        <div class="hero__sep"></div>
+        <div class="hero__item"><div class="hero__dot"></div><div class="hero__it">Rapport d'Analyse Stratégique — marchés, concurrents, options priorisées</div></div>
+        <div class="hero__item"><div class="hero__dot"></div><div class="hero__it">Pitch Deck &amp; Présentation — structure narrative, déclencheurs de décision</div></div>
+        <div class="hero__item"><div class="hero__dot"></div><div class="hero__it">Playbook Opérationnel — processus documentés, immédiatement transmissibles</div></div>
+        <div class="hero__sep"></div>
+        <div style="font-size:12px;color:rgba(255,255,255,.3);">Diagnostic gratuit · Sans engagement · Confidentiel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+
+<!-- POUR QUI -->
+<section class="section" id="pour-qui">
+  <div class="container">
+    <div class="pq__hdr">
+      <div class="tag">Pour qui</div>
+      <h2 class="hlg" style="color:var(--navy)">Reconnaissez-vous votre situation ?</h2>
+      <p class="lead" style="margin-top:14px">Tranchant est fait pour les dirigeants de PME qui ont une décision importante à prendre — et pas six semaines pour attendre.</p>
+    </div>
+    <div class="pq__grid">
+      <div class="pqcard">
+        <div class="pqcard__icon">🎯</div>
+        <div>
+          <div class="pqcard__title">Vous pitchez des investisseurs dans moins de 3 mois</div>
+          <p class="pqcard__desc">Votre présentation actuelle ne reflète pas la qualité de ce que vous avez construit. Un pitch raté, c'est 6 à 18 mois de délai supplémentaire et plusieurs centaines de milliers d'euros d'opportunité manquée.</p>
+        </div>
+      </div>
+      <div class="pqcard">
+        <div class="pqcard__icon">🔍</div>
+        <div>
+          <div class="pqcard__title">Vous avez une décision stratégique à trancher</div>
+          <p class="pqcard__desc">Expansion, pivot d'offre, entrée sur un segment concurrentiel — vous manquez des données pour décider avec confiance. Chaque semaine d'hésitation est une semaine offerte à vos concurrents.</p>
+        </div>
+      </div>
+      <div class="pqcard">
+        <div class="pqcard__icon">⚙️</div>
+        <div>
+          <div class="pqcard__title">Votre croissance est limitée par votre capacité à déléguer</div>
+          <p class="pqcard__desc">L'entreprise tourne à votre énergie, pas à celle de vos systèmes. Les mêmes erreurs se répètent. Chaque recrutement sans processus documenté coûte 2 à 4 mois de productivité perdue.</p>
+        </div>
+      </div>
+      <div class="pqcard">
+        <div class="pqcard__icon">⚡</div>
+        <div>
+          <div class="pqcard__title">Vous avez besoin d'un livrable professionnel — vite</div>
+          <p class="pqcard__desc">Pas dans 6 semaines. Pas après 10 réunions. Pas pour 30 000€. Un enjeu concret, un délai réel, quelqu'un qui traite le sujet avec rigueur et livre quelque chose d'utilisable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+
+<!-- SERVICES -->
+<section class="section s-grey" id="services">
+  <div class="container">
+    <div class="srv__hdr">
+      <div class="tag">Nos services</div>
+      <h2 class="hlg" style="color:var(--navy)">Trois livrables. Un seul objectif — vous faire avancer.</h2>
+      <p class="lead" style="margin-top:14px">Chaque service répond à une décision concrète. Périmètre défini ensemble, livraison en 48h après le call de cadrage.</p>
+    </div>
+    <div class="srv__grid">
+      <div class="srvc">
+        <div class="srvc__icon">📊</div>
+        <div class="srvc__title">Rapport d'Analyse Stratégique</div>
+        <p class="srvc__desc">Cartographie concurrentielle, analyse de marché sectorielle, scoring des options disponibles, feuille de route 12 mois priorisée par impact.</p>
+        <div class="srvc__anchor">"Une mauvaise décision sur le positionnement engage l'entreprise pour 12 à 24 mois."</div>
+        <div class="srvc__foot">
+          <div><div class="srvc__price">2 500 € HT</div><div class="srvc__delay">Livraison 48h</div></div>
+          <a href="#diagnostic" class="btn btn-outline btn-sm">Commencer</a>
+        </div>
+      </div>
+      <div class="srvc srvc--acc">
+        <div class="srvc__icon">🎯</div>
+        <div class="srvc__title">Pitch Deck &amp; Présentation Commerciale</div>
+        <p class="srvc__desc">Reconstruction du fil narratif selon la méthode MECE, intégration des déclencheurs psychologiques adaptés à votre audience, design professionnel adapté à votre charte graphique.</p>
+        <div class="srvc__anchor">"Un pitch raté devant des investisseurs peut coûter 6 à 18 mois et plusieurs centaines de milliers d'euros."</div>
+        <div class="srvc__foot">
+          <div><div class="srvc__price">3 500 € HT</div><div class="srvc__delay">Livraison 48h</div></div>
+          <a href="#diagnostic" class="btn btn-outline btn-sm">Commencer</a>
+        </div>
+      </div>
+      <div class="srvc">
+        <div class="srvc__icon">⚙️</div>
+        <div class="srvc__title">Playbook Opérationnel</div>
+        <p class="srvc__desc">Audit des processus existants, rédaction des SOPs prioritaires (vente, onboarding, service client), format immédiatement transmissible à l'équipe.</p>
+        <div class="srvc__anchor">"Le coût d'un recrutement raté faute de processus représente 1,5 à 2 fois le salaire annuel du poste."</div>
+        <div class="srvc__foot">
+          <div><div class="srvc__price">2 500 – 3 500 € HT</div><div class="srvc__delay">Selon complexité · 48h</div></div>
+          <a href="#diagnostic" class="btn btn-outline btn-sm">Commencer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="section s-navy" id="methode">
+  <div class="container">
+    <div class="prc__hdr">
+      <div class="tag">Notre méthode</div>
+      <h2 class="hlg" style="color:#fff">Du diagnostic au livrable en 4 étapes</h2>
+    </div>
+    <div class="prc__steps">
+      <div class="pstep">
+        <div class="pstep__num">1</div>
+        <div class="pstep__title">Questionnaire</div>
+        <div class="pstep__desc">5 minutes. Vous décrivez votre situation et l'enjeu de votre décision.</div>
+        <div class="pstep__arrow">›</div>
+      </div>
+      <div class="pstep">
+        <div class="pstep__num">2</div>
+        <div class="pstep__title">Diagnostic Gratuit</div>
+        <div class="pstep__desc">Sous 24h, vous recevez une lecture précise — risques identifiés, enjeux chiffrés, signaux à surveiller.</div>
+        <div class="pstep__arrow">›</div>
+      </div>
+      <div class="pstep">
+        <div class="pstep__num">3</div>
+        <div class="pstep__title">Call de Cadrage</div>
+        <div class="pstep__desc">20 minutes pour définir le périmètre exact du livrable et collecter toutes les informations nécessaires.</div>
+        <div class="pstep__arrow">›</div>
+      </div>
+      <div class="pstep">
+        <div class="pstep__num">4</div>
+        <div class="pstep__title">Livrable en 48h</div>
+        <div class="pstep__desc">Rapport, pitch deck ou playbook livré, opérationnel, prêt à l'emploi dès réception.</div>
+      </div>
+    </div>
+    <p class="prc__note">
+      <strong>Pourquoi 48h là où un cabinet prend 6 semaines ?</strong>
+      Périmètre défini précisément lors du call de cadrage. Pas de réunions de lancement, pas de comités de validation internes, pas de livrables gonflés pour justifier des honoraires élevés. Un problème, un scope, un livrable.
+    </p>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="faq__hdr">
+      <div class="tag">Questions fréquentes</div>
+      <h2 class="hlg" style="color:var(--navy)">Ce que les dirigeants demandent avant de se lancer</h2>
+    </div>
+    <div class="faq__grid">
+      <div class="faqitem">
+        <div class="faqitem__q">48h, c'est vraiment possible ?</div>
+        <div class="faqitem__a">Oui — à condition que le périmètre soit bien défini lors du call de cadrage de 20 minutes. Une fois les informations reçues, le chrono démarre et le livrable est livré dans les 48h suivantes.</div>
+      </div>
+      <div class="faqitem">
+        <div class="faqitem__q">Pourquoi pas un grand cabinet de conseil ?</div>
+        <div class="faqitem__a">Un cabinet traditionnel facture entre 15 000 et 50 000€ pour un rapport livré en 6 à 8 semaines. Tranchant livre en 48h à une fraction du coût — avec le même niveau d'exigence analytique. Pour une PME, le ratio valeur/délai/coût n'est pas comparable.</div>
+      </div>
+      <div class="faqitem">
+        <div class="faqitem__q">Et si le livrable ne correspond pas à mes attentes ?</div>
+        <div class="faqitem__a">Le call de cadrage est conçu pour éviter exactement ça. Si des ajustements sont nécessaires après livraison, ils sont pris en charge. L'objectif est un livrable que vous pouvez utiliser immédiatement.</div>
+      </div>
+      <div class="faqitem">
+        <div class="faqitem__q">Vous travaillez sur tous les secteurs ?</div>
+        <div class="faqitem__a">Oui. La méthodologie est agnostique au secteur — c'est le contexte qui change, pas la rigueur de l'analyse. Industrie, retail, services B2B, tech, santé, formation — chaque livrable part de la réalité de votre marché.</div>
+      </div>
+      <div class="faqitem">
+        <div class="faqitem__q">Comment se passe le paiement ?</div>
+        <div class="faqitem__a">100% à la commande, paiement par virement avant démarrage. Le diagnostic gratuit et le call de cadrage restent sans engagement — le paiement intervient uniquement au moment où vous confirmez la commande du livrable.</div>
+      </div>
+      <div class="faqitem">
+        <div class="faqitem__q">Le diagnostic gratuit est vraiment gratuit ?</div>
+        <div class="faqitem__a">Oui, sans condition. Vous soumettez le questionnaire, vous recevez une analyse personnalisée sous 24h. Aucune carte bancaire, aucun engagement. Si vous souhaitez aller plus loin, vous décidez — pas nous.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+
+<!-- TÉMOIGNAGES -->
+<section class="section" id="temoignages">
+  <div class="container">
+    <div class="tmh">
+      <div class="tag">Témoignages</div>
+      <h2 class="hlg" style="color:var(--navy)">Ce que disent les dirigeants qui ont franchi le pas</h2>
+      <p class="lead" style="margin-top:14px">Extraits de retours clients. Identités anonymisées disponibles sur demande.</p>
+    </div>
+    <div class="tm__grid">
+
+      <!-- ★ FORT — ROI chiffré -->
+      <div class="tmcard tmcard--acc">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">L'analyse à 2 500 € nous a évité une erreur à 50 000 €. Le calcul est immédiat. Merci pour cette vision.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Philippe G.</div><div class="tmcard__role">Fondateur · PRODIPHARM</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- ★ FORT — 2 term sheets -->
+      <div class="tmcard tmcard--acc">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Premier pitch avec le nouveau deck : 2 term sheets reçus en 15 jours. Avant, on faisait des tours sans résultat. La différence, c'est la clarté narrative.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Thomas K.</div><div class="tmcard__role">Fondateur &amp; CEO · AgriTech Série A</div></div>
+          <span class="tmcard__svc">Pitch Deck</span>
+        </div>
+      </div>
+
+      <!-- ★ FORT — 200K€ évités -->
+      <div class="tmcard tmcard--acc">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Diagnostic d'un nouveau marché B2B en 48h. On a évité d'investir 200 000 € dans le mauvais segment. Le rapport à 2 500 € était la meilleure décision de l'année.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Isabelle H.</div><div class="tmcard__role">DAF · PME Industrielle (120 pers.)</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- ★ FORT — levée 2,3 M€ -->
+      <div class="tmcard tmcard--acc">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Levée de 2,3 M€ clôturée 6 semaines après la livraison du deck. Sans lui, on aurait perdu 4 mois à convaincre des investisseurs qui n'arrivaient pas à cerner notre différenciation.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Julien P.</div><div class="tmcard__role">Cofondateur · Fintech B2B</div></div>
+          <span class="tmcard__svc">Pitch Deck</span>
+        </div>
+      </div>
+
+      <!-- 6 mois gagnés -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Livrable reçu en 48h chrono. Une clarté stratégique qui nous fait gagner 6 mois de développement. À recommander les yeux fermés.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Samba C.</div><div class="tmcard__role">CEO · Dame Noire</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- 90 jours feuille de route -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Rapport reçu en 48h : clair, complet, actionnable. On a enfin une feuille de route simple pour les 90 prochains jours.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Jean D.</div><div class="tmcard__role">CEO · PME B2B</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- Sales ramp 3M → 3S -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Le playbook commercial a réduit la durée de montée en compétence de nos nouveaux sales de 3 mois à 3 semaines. Ça valait 10x le prix.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Carole T.</div><div class="tmcard__role">Directeur Commercial · PME 45 pers.</div></div>
+          <span class="tmcard__svc">Playbook</span>
+        </div>
+      </div>
+
+      <!-- Pitch EdTech Série A -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Notre Pitch Deck pour la série A était complexe. Restructuré, sublimé visuellement, le résultat est percutant et ultra-pro. Un véritable boost pour nos RDV investisseurs.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Mathieu R.</div><div class="tmcard__role">Fondateur & CEO · EdTech B2B</div></div>
+          <span class="tmcard__svc">Pitch Deck</span>
+        </div>
+      </div>
+
+      <!-- Marché espagnol -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">On hésitait depuis 8 mois à entrer sur le marché espagnol. Le rapport nous a donné les données et une recommandation claire. Décision prise en 3 jours.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Aurore D.</div><div class="tmcard__role">Directeur Général · Retail B2C</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- Playbook onboarding -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Les processus étaient dans la tête de mes managers depuis 10 ans. En 48h, on avait un playbook complet et transmissible. Onboarding de 3 personnes en 2 semaines sans que ça me prenne une heure.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Sophie M.</div><div class="tmcard__role">DAF · Groupe industriel (85 pers.)</div></div>
+          <span class="tmcard__svc">Playbook</span>
+        </div>
+      </div>
+
+      <!-- Deux marchés Léa B -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Nous avions besoin d'une vision claire sur deux nouveaux marchés. Les données sont robustes, l'analyse fine et les recommandations actionnables. Indispensable pour nos décisions futures.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Léa B.</div><div class="tmcard__role">Directeur Stratégie · Tech Innovation B2B</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- Concurrent 5M€ -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Un concurrent venait de lever 5 M€ dans notre niche. L'analyse concurrentielle livrée en 48h nous a permis de repositionner notre offre avant qu'ils s'installent. ROI immédiat.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Nicolas B.</div><div class="tmcard__role">CEO · SaaS B2B</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- Opportunité de rachat -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">J'avais une opportunité de rachat à saisir en 10 jours. Le rapport d'analyse du marché cible m'a permis de négocier en position de force. Précieux.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Marc L.</div><div class="tmcard__role">CEO · Distribution B2B</div></div>
+          <span class="tmcard__svc">Rapport</span>
+        </div>
+      </div>
+
+      <!-- Playbook expansion -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">Notre problème : tout était dans la tête du fondateur depuis 12 ans. Le playbook est complet, opérationnel. Nos équipes l'utilisent quotidiennement depuis l'ouverture de notre seconde structure.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Camille R.</div><div class="tmcard__role">Directeur Général · Formation professionnelle</div></div>
+          <span class="tmcard__svc">Playbook</span>
+        </div>
+      </div>
+
+      <!-- Deck HealthTech -->
+      <div class="tmcard">
+        <div class="tmcard__stars">★★★★★</div>
+        <p class="tmcard__quote">On avait un très bon produit et un pitch invendable. Deck restructuré en 48h. L'investisseur lead a dit que c'était l'un des decks les plus convaincants qu'il avait vus.</p>
+        <div class="tmcard__foot">
+          <div><div class="tmcard__name">Éric V.</div><div class="tmcard__role">Fondateur · HealthTech</div></div>
+          <span class="tmcard__svc">Pitch Deck</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+
+<!-- FORM -->
+<section class="section s-grey" id="diagnostic">
+  <div class="container">
+    <div class="diag__wrap">
+      <div class="diag__left">
+        <div class="tag">Diagnostic Gratuit</div>
+        <h2 class="hlg" style="color:var(--navy)">Recevez votre diagnostic stratégique sous 24h</h2>
+        <p class="lead" style="margin-top:12px;font-size:15px;">Décrivez votre situation en quelques lignes. Vous recevez une analyse personnalisée — risques identifiés, signaux chiffrés, enjeux nommés. Sans engagement.</p>
+        <div class="dprom" style="margin-top:20px;"><div class="dprom__icon">⚡</div><div class="dprom__t"><strong>Réponse sous 24h.</strong> Chaque diagnostic est rédigé manuellement — pas un template automatique.</div></div>
+        <div class="dprom"><div class="dprom__icon">🔒</div><div class="dprom__t"><strong>Strictement confidentiel.</strong> Vos informations ne sont jamais partagées ni utilisées à d'autres fins.</div></div>
+        <div class="dprom"><div class="dprom__icon">🎯</div><div class="dprom__t"><strong>Personnalisé à votre réalité.</strong> Le diagnostic s'adapte à votre secteur, votre taille et votre enjeu spécifique.</div></div>
+        <div class="proof-strip" style="margin-top:24px;">
+          <div style="font-size:20px;">📄</div>
+          <div class="proof-strip__t"><strong>Des exemples de diagnostics sont disponibles sur demande.</strong> Écrivez à <a href="mailto:issamalickhermann@gmail.com" style="color:var(--gold);">issamalickhermann@gmail.com</a> pour voir ce que vous recevrez.</div>
+        </div>
+      </div>
+
+      <div class="fcard">
+        <div class="fcard__head">
+          <div class="fcard__ttl">Votre diagnostic stratégique gratuit</div>
+          <div class="fcard__sub">3 minutes · Réception sous 24h · Sans engagement</div>
+        </div>
+        <div class="fcard__body">
+          <div class="fsuccess" id="formSuccess">
+            <div class="fsuccess__icon">✅</div>
+            <div class="fsuccess__title">Demande envoyée</div>
+            <p class="fsuccess__desc">Vous recevrez votre diagnostic personnalisé à l'adresse indiquée sous 24 heures.</p>
+          </div>
+          <div class="finner" id="formBody">
+            <!--
+              FORMSPREE — 2 étapes :
+              1. Compte gratuit sur https://formspree.io
+              2. Remplacer VOTRE_ID par votre endpoint (ex: xpwzabcd)
+            -->
+            <form id="diagForm" action="https://formspree.io/f/mvzwppbk" method="POST">
+              <div class="frow">
+                <div class="fg">
+                  <label class="fl" for="f-nom">Prénom &amp; Nom <span>*</span></label>
+                  <input class="fc" type="text" id="f-nom" name="nom_prenom" required placeholder="Jean Dupont" />
+                </div>
+                <div class="fg">
+                  <label class="fl" for="f-co">Entreprise <span>*</span></label>
+                  <input class="fc" type="text" id="f-co" name="entreprise" required placeholder="Votre société" />
+                </div>
+              </div>
+              <div class="fg">
+                <label class="fl" for="f-sec">Secteur d'activité <span>*</span></label>
+                <input class="fc" type="text" id="f-sec" name="secteur" required placeholder="Ex : industrie, SaaS, retail, santé..." />
+              </div>
+              <div class="fg">
+                <label class="fl" for="f-defi">Votre défi stratégique principal <span>*</span></label>
+                <select class="fc" id="f-defi" name="defi_principal" required>
+                  <option value="">-- Sélectionner --</option>
+                  <option>Développer mon chiffre d'affaires (croissance)</option>
+                  <option>Faire face à la concurrence (positionnement)</option>
+                  <option>Structurer et organiser mes équipes (organisation)</option>
+                  <option>Préparer une levée de fonds ou une cession</option>
+                  <option>Lancer un nouveau produit ou service</option>
+                  <option>Entrer sur un nouveau marché</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label class="fl" for="f-sit">Décrivez votre situation en quelques phrases <span>*</span></label>
+                <textarea class="fc" id="f-sit" name="situation" required placeholder="Plus c'est précis, plus le diagnostic sera utile — contexte, ce qui bloque, la décision à prendre..."></textarea>
+              </div>
+              <div class="fg">
+                <label class="fl" for="f-email">Email <span>*</span></label>
+                <input class="fc" type="email" id="f-email" name="email" required placeholder="vous@entreprise.com" />
+              </div>
+              <input type="text" name="_gotcha" style="display:none" />
+              <input type="hidden" name="_subject" value="Nouveau diagnostic gratuit — Tranchant" />
+              <button type="submit" class="fsubmit" id="submitBtn">Envoyer ma demande de diagnostic →</button>
+              <p class="fnote">Réponse sous 24h · Confidentiel · Sans engagement</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RDV BAND -->
+<div class="rdv">
+  <div class="container">
+    <div class="rdv__i">
+      <div>
+        <div class="rdv__title">Vous préférez un échange direct ?</div>
+        <div class="rdv__desc">Réservez un appel de 20 minutes — gratuit, sans engagement.</div>
+      </div>
+      <button class="btn btn-gold btn-lg" onclick="openCalendly(event)">Réserver un appel →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__i">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:3px;height:20px;background:var(--gold);border-radius:2px;"></div>
+        <div><div class="footer__name">TRANCHANT</div><div class="footer__fsub">Conseil Stratégique</div></div>
+      </div>
+      <div class="footer__mail"><a href="mailto:issamalickhermann@gmail.com">issamalickhermann@gmail.com</a></div>
+    </div>
+    <div class="footer__copy">© 2026 Tranchant · Malick Hermann · Tous droits réservés</div>
+  </div>
+</footer>
+
+
+<!-- STICKY MOBILE -->
+<div class="sticky" id="stickyCta">
+  <a href="#diagnostic" class="btn btn-gold" style="font-size:14px;padding:11px 14px;">Diagnostic gratuit</a>
+  <button class="btn btn-ghost" style="font-size:14px;padding:11px 14px;" onclick="openCalendly(event)">Prendre RDV</button>
+</div>
+
+
+<script>
+  /*
+    CALENDLY — remplacer l'URL :
+    1. Compte gratuit sur https://calendly.com
+    2. Créer un créneau "Call Découverte 20min"
+    3. Remplacer VOTRE_COMPTE_CALENDLY par votre lien
+  */
+  function openCalendly(e) {
+    if (e) e.preventDefault();
+    if (typeof Calendly !== 'undefined') {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/issamalickhermann/30min' });
+    } else {
+      window.location.href = 'mailto:issamalickhermann@gmail.com?subject=Demande%20de%20rendez-vous%20—%20Tranchant';
+    }
+  }
+
+  // Form submit
+  const form    = document.getElementById('diagForm');
+  const fBody   = document.getElementById('formBody');
+  const fOk     = document.getElementById('formSuccess');
+  const fBtn    = document.getElementById('submitBtn');
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      fBtn.disabled = true;
+      fBtn.textContent = 'Envoi en cours...';
+      try {
+        const r = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} });
+        if (r.ok) { fBody.classList.add('hidden'); fOk.style.display = 'block'; }
+        else throw new Error();
+      } catch {
+        fBtn.disabled = false;
+        fBtn.textContent = 'Envoyer ma demande de diagnostic →';
+        alert('Erreur lors de l\'envoi. Écrivez directement à issamalickhermann@gmail.com');
+      }
+    });
+  }
+
+  // Navbar shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,.4)' : 'none';
+  });
+
+  // Hide sticky CTA when form section is visible
+  const sticky = document.getElementById('stickyCta');
+  if (sticky) {
+    const obs = new IntersectionObserver(([e]) => {
+      sticky.style.opacity = e.isIntersecting ? '0' : '1';
+      sticky.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
+    }, { threshold: 0.1 });
+    obs.observe(document.getElementById('diagnostic'));
+  }
+</script>
+</body>
+            </html>
