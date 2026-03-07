@@ -227,6 +227,17 @@
     .sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 190; background: var(--navy); border-top: 2px solid var(--gold); padding: 11px 18px; gap: 10px; align-items: center; transition: opacity .3s; }
     .sticky a, .sticky button { flex: 1; text-align: center; }
     @media(max-width:640px){ .sticky { display: flex; } body { padding-bottom: 66px; } }
+
+  /* ── FADE-UP ON SCROLL ─────────────────────────────────── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   </style>
 </head>
 <body>
@@ -819,6 +830,44 @@
     }, { threshold: 0.1 });
     obs.observe(document.getElementById('diagnostic'));
   }
+</script>
+
+<script>
+/* ── ANIMATION 1 : FADE-UP ON SCROLL (one-shot) ─────────── */
+(function () {
+  var targets = document.querySelectorAll('.pqcard, .srvc, .tmcard, .faqitem, .pstep');
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+  document.querySelectorAll('.pq__grid, .srv__grid, .tm__grid, .faq__grid, .prc__steps').forEach(function (g) {
+    Array.from(g.children).forEach(function (c, i) { c.style.transitionDelay = (i * 0.1) + 's'; });
+  });
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach(function (el) { el.classList.add('fade-up'); obs.observe(el); });
+})();
+
+/* ── ANIMATION 2 : COMPTEURS (48h, 24h) ──────────────────── */
+(function () {
+  var counters = document.querySelectorAll('.hero__sn');
+  if (!counters.length || !('IntersectionObserver' in window)) return;
+  function run(el) {
+    var txt = el.textContent.trim(), num = parseInt(txt, 10), suf = txt.replace(/[0-9]/g,'');
+    if (isNaN(num)) return;
+    var dur = 1200, t0 = null;
+    (function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(e * num) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); obs.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  counters.forEach(function (el) { obs.observe(el); });
+})();
 </script>
 </body>
             </html>
