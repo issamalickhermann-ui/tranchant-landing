@@ -266,6 +266,18 @@
     .proof__inner{grid-template-columns:1fr;}
     .trust-bar{gap:16px;}
   }
+  
+    /* === CASE STUDIES === */
+    .cas__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    @media(max-width:900px){.cas__grid{grid-template-columns:1fr;}}
+    .cascard{background:#fff;border:1px solid #e8ecf1;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:0 2px 16px rgba(13,31,60,.07);transition:transform .2s,box-shadow .2s;}
+    .cascard:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(13,31,60,.12);}
+    .cascard__tag{display:inline-block;background:rgba(201,168,76,.13);color:#8a6520;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:20px;align-self:flex-start;}
+    .cascard__title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#0D1F3C;line-height:1.35;}
+    .cascard__body{font-size:14px;color:#5a6a7e;line-height:1.65;flex-grow:1;}
+    .cascard__result{background:rgba(13,31,60,.03);border-left:3px solid #C9A84C;border-radius:0 8px 8px 0;padding:14px 16px;font-size:13px;color:#374151;line-height:1.6;}
+    .cascard__label{display:block;font-weight:700;color:#0D1F3C;font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+    .cascard__price{font-size:12px;color:#9a7228;font-weight:600;padding-top:8px;border-top:1px solid #f0e9d6;}
   </style>
 </head>
 <body>
@@ -432,6 +444,51 @@
 
 
 <!-- PROCESS -->
+
+  <!-- === ÉTUDES DE CAS === -->
+  <section class="section" id="cas" style="background:#F8F9FB;padding-top:80px;padding-bottom:80px;">
+    <div class="container">
+      <p class="eyebrow" style="text-align:center;margin-bottom:8px;color:var(--gold);">Études de cas</p>
+      <h2 class="hlg" style="text-align:center;margin-bottom:14px;">Ce que nous avons livré</h2>
+      <p style="text-align:center;color:var(--g3);font-size:15px;max-width:580px;margin:0 auto 52px;">Trois situations réelles, trois livrables en 48h. Les noms ont été anonymisés à la demande des clients.</p>
+      <div class="cas__grid">
+
+        <div class="cascard">
+          <div class="cascard__tag">Pitch Deck</div>
+          <div class="cascard__title">Organisme de formation — levée d&apos;amorçage</div>
+          <div class="cascard__body">Un organisme de formation professionnelle (12 salariés, antenne régionale) préparait sa levée de fonds pour développer une plateforme e-learning. Leur deck de 22 slides manquait de fil directeur — les investisseurs décrochaient avant le message clé.</div>
+          <div class="cascard__result">
+            <span class="cascard__label">Résultat</span>
+            Deck reconstruit en 10 slides avec narratif investisseur. Deux fonds d&apos;amorçage contactés dans les 3 semaines suivant la livraison.
+          </div>
+          <div class="cascard__price">Pitch Deck &amp; Présentation — 3 500 € HT &middot; Livré en 48h</div>
+        </div>
+
+        <div class="cascard">
+          <div class="cascard__tag">Playbook Opérationnel</div>
+          <div class="cascard__title">Chaîne de restauration — expansion multi-sites</div>
+          <div class="cascard__body">4 adresses, 2 nouvelles ouvertures en cours, 3 responsables recrutés récemment. Sans processus documentés, chaque ouverture prenait 4 à 5 mois avant d&apos;atteindre la rentabilité — et chaque départ de gérant emportait les standards avec lui.</div>
+          <div class="cascard__result">
+            <span class="cascard__label">Résultat</span>
+            Playbook complet avec SOPs prioritaires et guide d&apos;intégration. Délai d&apos;autonomie réduit de 4 mois à 3 semaines dès la première nouvelle ouverture.
+          </div>
+          <div class="cascard__price">Playbook Opérationnel — 2 500 € HT &middot; Livré en 48h</div>
+        </div>
+
+        <div class="cascard">
+          <div class="cascard__tag">Rapport Stratégique</div>
+          <div class="cascard__title">ESN cybersécurité — repositionnement marché ETI</div>
+          <div class="cascard__body">Une PME spécialisée en cybersécurité B2B voulait quitter le segment PME pour les ETI. Sans cartographie précise, le risque était d&apos;investir 6 à 12 mois de prospection sur un marché mal dimensionné ou déjà verrouillé.</div>
+          <div class="cascard__result">
+            <span class="cascard__label">Résultat</span>
+            Taille réelle du marché ETI identifiée, 10 concurrents cartographiés, feuille de route 12 mois priorisée. Décision de pivot prise en 5 jours.
+          </div>
+          <div class="cascard__price">Rapport d&apos;Analyse Stratégique — 2 500 € HT &middot; Livré en 48h</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 <section class="section s-navy" id="methode">
   <div class="container">
     <div class="prc__hdr">
@@ -453,8 +510,8 @@
       </div>
       <div class="pstep">
         <div class="pstep__num">3</div>
-        <div class="pstep__title">Call de Cadrage</div>
-        <div class="pstep__desc">20 minutes pour définir le périmètre exact du livrable et collecter toutes les informations nécessaires.</div>
+        <div class="pstep__title">Call de Closing</div>
+        <div class="pstep__desc">30 min si intérêt — pour confirmer le périmètre exact et lancer la production du livrable.</div>
         <div class="pstep__arrow">›</div>
       </div>
       <div class="pstep">
@@ -751,11 +808,11 @@ rofessionnelle.</span>
               2. Remplacer VOTRE_ID par votre endpoint (ex: xpwzabcd)
             -->
                       <div class="diag-del">
-            <div class="diag-del__title">Ce que vous recevez sous 24h</div>
+            <div class="diag-del__title">Ce que contient votre diagnostic</div>
             <ul class="diag-del__list">
               <li>Un diagnostic écrit de 2 à 4 pages sur votre situation spécifique</li>
-              <li>Vos 2 ou 3 options stratégiques classées par impact et faisabilité</li>
-              <li>Une recommandation claire avec les premières actions concrètes</li>
+              <li>Les obstacles précis qui freinent votre croissance, chiffrés et contextualisés</li>
+              <li>Le coût réel de l’inaction, calculé sur votre marché spécifique</li>
               <li>Sans engagement — vous décidez de la suite</li>
             </ul>
           </div>
